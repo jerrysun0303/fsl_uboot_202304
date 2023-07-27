@@ -1,0 +1,15 @@
+if TARGET_MX6DL_VENUS || TARGET_MX6DL_VENUS_COMMON
+
+config SYS_BOARD
+	default "mx6dl_venus"
+
+config SYS_VENDOR
+	default "philips"
+
+config SYS_CONFIG_NAME
+	default "mx6dl_venus"
+
+config TEXT_BASE
+    default 0x27800000
+	
+endif

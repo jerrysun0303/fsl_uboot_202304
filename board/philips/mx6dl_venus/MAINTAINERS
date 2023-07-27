@@ -1,0 +1,6 @@
+MX6SABRESD BOARD
+M:	Fabio Estevam <festevam@gmail.com>
+S:	Maintained
+F:	board/philips/mx6dl_venus/
+F:	include/configs/mx6dl_venus.h
+F:	configs/mx6dl_venus_defconfig
