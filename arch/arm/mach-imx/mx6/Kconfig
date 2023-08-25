@@ -106,6 +106,20 @@ config MX6_DDRCAL
 	  Say "Y" if your board uses dynamic (per-boot) DDR calibration.
 	  If unsure, say N.
 
+config TARGET_MX6DL_VENUS_COMMON
+    bool
+    select BOARD_LATE_INIT
+    select DM
+    select DM_THERMAL
+    select IMX_THERMAL
+    select BOARD_EARLY_INIT_F
+    select NXP_BOARD_REVISION
+    imply CMD_DM
+    select FSL_CAAM
+    select FSL_BLOB
+    select ARCH_MISC_INIT
+    select RNG_SELF_TEST
+
 choice
 	prompt "MX6 board select"
 	optional
@@ -377,6 +391,11 @@ config TARGET_MX6SABRESD
 	imply CMD_DM
 	select FSL_CAAM
 	select ARCH_MISC_INIT
+
+config TARGET_MX6DL_VENUS
+	bool "mx6venus"
+    select TARGET_MX6DL_VENUS_COMMON
+    depends on MX6DL
 
 config TARGET_MX6SLEVK
 	bool "mx6slevk"
@@ -705,6 +724,7 @@ source "board/softing/vining_2000/Kconfig"
 source "board/liebherr/display5/Kconfig"
 source "board/liebherr/mccmon6/Kconfig"
 source "board/logicpd/imx6/Kconfig"
+source "board/philips/mx6venus/Kconfig"
 source "board/solidrun/mx6cuboxi/Kconfig"
 source "board/somlabs/visionsom-6ull/Kconfig"
 source "board/technexion/pico-imx6/Kconfig"

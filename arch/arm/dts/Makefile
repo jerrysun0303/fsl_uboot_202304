@@ -1,4 +1,6 @@
-# SPDX-License-Identifier: GPL-2.0+
+# SPDX-License-Identifier: GPL-2.0
+#
+# Copyright (c) 2023 Koninklijke Philips N.V.
 
 dtb-$(CONFIG_TARGET_SMARTWEB) += at91sam9260-smartweb.dtb
 dtb-$(CONFIG_TARGET_TAURUS) += at91sam9g20-taurus.dtb
@@ -834,6 +836,7 @@ dtb-y += \
 	imx6dl-riotboard.dtb \
 	imx6dl-sabreauto.dtb \
 	imx6dl-sabresd.dtb \
+	imx6dl-venus.dtb \
 	imx6dl-wandboard-revd1.dtb \
 	imx6s-dhcom-drc02.dtb
 

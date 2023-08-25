@@ -1,11 +1,20 @@
 // SPDX-License-Identifier: GPL-2.0+
 /*
- * Copyright (C) 2009
- * Guennadi Liakhovetski, DENX Software Engineering, <lg@denx.de>
+ * Copyright (c) 2023 Koninklijke Philips N.V. All Rights Reserved.
  *
- * Copyright (C) 2011
- * Stefano Babic, DENX Software Engineering, <sbabic@denx.de>
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #include <common.h>
 #include <errno.h>
 #include <dm.h>
@@ -343,6 +352,7 @@ U_BOOT_DRIVER(gpio_mxc) = {
 	.priv_auto	= sizeof(struct mxc_bank_info),
 	.of_match = mxc_gpio_ids,
 	.bind	= mxc_gpio_bind,
+	.flags = DM_FLAG_PRE_RELOC,
 };
 
 DM_DRIVER_ALIAS(gpio_mxc, fsl_imx6q_gpio)
