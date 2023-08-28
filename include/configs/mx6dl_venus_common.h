@@ -61,7 +61,7 @@
 		"nfsroot=/opt/eldk/arm\0"				\
 		"mach="MACH_NAME"\0"					\
 		"mmcdev=3\0"						\
-		"console=null\0"					\
+		"console=ttymxc0\0"					\
 		"bootargs_base=setenv bootargs console=${console} "	\
 		"machine=${mach} "				\
 		"u_boot_version=${u_boot_version} "		\
