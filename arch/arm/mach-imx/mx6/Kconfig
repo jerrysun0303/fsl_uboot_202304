@@ -106,20 +106,6 @@ config MX6_DDRCAL
 	  Say "Y" if your board uses dynamic (per-boot) DDR calibration.
 	  If unsure, say N.
 
-config TARGET_MX6DL_VENUS_COMMON
-    bool
-    select BOARD_LATE_INIT
-    select DM
-    select DM_THERMAL
-    select IMX_THERMAL
-    select BOARD_EARLY_INIT_F
-    select NXP_BOARD_REVISION
-    imply CMD_DM
-    select FSL_CAAM
-    select FSL_BLOB
-    select ARCH_MISC_INIT
-    select RNG_SELF_TEST
-
 choice
 	prompt "MX6 board select"
 	optional
@@ -394,8 +380,10 @@ config TARGET_MX6SABRESD
 
 config TARGET_MX6DL_VENUS
 	bool "mx6venus"
-    select TARGET_MX6DL_VENUS_COMMON
     depends on MX6DL
+	select BOARD_EARLY_INIT_F
+	select BOARD_LATE_INIT
+	imply CMD_DM
 
 config TARGET_MX6SLEVK
 	bool "mx6slevk"
